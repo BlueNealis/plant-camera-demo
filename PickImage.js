@@ -8,6 +8,9 @@ const PickImage = (props) => {
     <TouchableOpacity onPress={props.openImagePicker} style={styles.button}>
       <Text style={styles.buttonText}>Upload an Image</Text>
     </TouchableOpacity>
+    <TouchableOpacity onPress={props.openCamera} style={styles.button}>
+      <Text style={styles.buttonText}>Take a Picture</Text>
+    </TouchableOpacity>
     </View>)
 }
 

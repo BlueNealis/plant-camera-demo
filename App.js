@@ -18,7 +18,7 @@ class App extends Component {
   openImagePickerAsync = async () => {
     let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync()
     if(!persmissionResult.granted) {
-      alert('Access to cameral roll is required for the app to function as intended')
+      alert('Access to camera roll is required for the app to function as intended')
       return
     }
 
@@ -31,11 +31,21 @@ class App extends Component {
     })
   }
 
+  openCameraAsync = async () => {
+    let permissionResult = await ImagePicker.requestCameraPermissionsAsync()
+    if(!persmissionResult.granted) {
+      alert('Access to camera is required for the app to function as intended')
+      return
+    } else {
+    ImagePicker.launchCameraAsync()
+  }
+  }
+
   render() {
   return (
     <View style={styles.container}>
       <Header />
-      <PickImage openImagePicker={this.openImagePickerAsync}/>
+      <PickImage openImagePicker={this.openImagePickerAsync} openCamera={this.openCameraAsync}/>
       <StatusBar style="auto" />
     </View>
   );
