@@ -16,14 +16,17 @@ class App extends Component {
   }
 
 handleClick = (event) => {
-    Alert.alert('WOAH', 'I cant believe youve done this')
+  Alert.alert(
+    "Woah",
+    "Now youve done it",
+  )
   }
 
 
   render() {
   return (
     <View style={styles.container}>
-      <Button onClick={this.handleClick} title='Press Me'/>
+      <Button onPress={this.handleClick} title='Press Me'/>
     </View>
   );
 }
