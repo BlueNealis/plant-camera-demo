@@ -18,7 +18,7 @@ class App extends Component {
 handleClick = (event) => {
     fetch('https://api.thecatapi.com/v1/images/search', {
       method: 'GET',
-      headers: {'content-type': 'aplication/json', 'x-api-key':'a107eb72-ba6c-42a9-8cc4-37e777d9e50a'}
+      headers: {'content-type': 'aplication/json', 'x-api-key':API_KEY}
     })
     .then(response => response.json())
     .then(data => (this.setState({catImage: data[0].url })))
